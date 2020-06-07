@@ -12,7 +12,6 @@ export class ServersService {
 
     public createServer() : Observable<String>{
         return this.http.get<String>(`api/hello`);
-         //this.serverCreationStatus = 'Server is created';
        }
 
 }
