@@ -1,0 +1,60 @@
+<div class="container">
+    <table class="table table-responsive table-striped">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>year</th>
+        <th>Action</th>
+        
+      </tr>
+      <tr *ngIf="!detail.length">
+          <td colspan="3">No rows to Display</td>
+        </tr>
+      <tr *ngFor="let row of detail;let i = index">
+        <td>{{row.id}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.year}}</td>
+        <td><button (click)="deleteClicked(i)">delete</button></td>
+      </tr>
+    </table>
+    <div>
+  
+    <hr />
+    <div *ngFor="let row of rows;let i = index">
+    <input type="text" [(ngModel)]="row.id" placeholder="id" />
+    <input type="text" [(ngModel)]="row.name" placeholder="name" />
+    <input type="text" [(ngModel)]="row.year" placeholder="year" />
+    <button (click)="submit(i)">Submit</button>
+  </div>
+    <button (click)="buttonClicked()">Click to Insert New Row</button>
+    </div>
+</div>
+<div class="container">
+    <div class = "row">
+        <div class="col-xs-12">
+          <h3>I am in the APp  component</h3>
+          <hr>
+         <!-- <warning-alert></warning-alert>
+          <app-success-alert></app-success-alert>-->
+          <app-servers></app-servers>
+        </div>
+        <div class="col-xs-4">
+            <h3>I am in the APp  component</h3>
+            <hr>
+           <warning-alert></warning-alert>
+            <app-success-alert></app-success-alert>
+          </div>
+          <div class="col-xs-4">
+              <app-product-form></app-product-form>
+            </div>
+      </div>
+      
+      <div class = "row">
+          <div class="col-xs-4">
+              <h3>I am in the APp  component</h3>
+              <hr>
+              <app-server-table></app-server-table>
+            </div>
+        </div>
+ 
+  </div>
